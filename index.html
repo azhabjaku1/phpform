@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projekt</title>
+        <meta charset="UTF-8">
+        <style type="text/css">
+            html { 
+              background: url(arbiii.jpg) no-repeat center center fixed; 
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+            header {
+                background-color: #ebebeb;
+                padding: 20px 20px;
+                text-align: center;
+                font-size: 35px;
+                border: 2px solid #4CAF50;
+                width: 700px;
+                margin-left: 25%;
+            }
+            ul,li:hover {
+                cursor: pointer;
+            }
+            ul {
+                font-size: 20px;
+                margin-left: 35%;
+            }
+            #arbi, #benodrril {
+                padding: 10px;
+                width: 10%;
+                background-color: #ebebeb;
+                border: 2px solid #4CAF50;
+                float: left;
+                text-align: center;
+                font-size: 16px;
+                margin-left:1%;
+            }
+            #arbi:hover, #benodrril:hover {
+                    background-color: #4CAF50;
+                    color: white;
+            }  
+            #text {
+                margin: 0;
+                border: 1px solid black;
+                border-radius: 0;
+                width: 100%;
+                padding: 40px;
+                font-size: 16px;
+            }
+            section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 1%;
+            }
+
+            input {
+                width: 200px;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>To-Do-Liste</header>
+        <br>
+    <section>
+        <input type="text" id="kali", placeholder="Text....">
+        <button id="arbi">Add</button>
+        <button id="benodrril">Clear All</button>
+    </section>
+        <ul id="mrrshk">
+        </ul>
+    </body>
+</html>
+
+<script type="text/javascript">
+    
+let input = document.getElementById("kali");
+let addBtn = document.getElementById("arbi")
+let clearBtn = document.getElementById("benodrril")
+let history = document.getElementById("mrrshk")
+
+
+
+
+function first() {
+    let item = document.createElement("li")
+    item.innerHTML = input.value
+    item.addEventListener("click", decorate)
+    function removedecor() {
+     item.style.textDecoration = "none"
+}
+
+    function decorate() {
+    item.style.textDecoration = "line-through"
+    item.addEventListener("click", removedecor)
+}
+    history.prepend(item)
+
+}
+
+addBtn.addEventListener('click', first)
+
+function second(event) {
+if (event.keyCode === 13) {
+        event.preventDefault()
+        addBtn.click()
+    }
+}
+
+input.addEventListener("keyup", second) 
+
+function clear() 
+{
+    history.innerHTML = ""
+}
+
+clearBtn.addEventListener("click", clear)
+</script>
+

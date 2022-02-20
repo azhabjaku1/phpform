@@ -1,0 +1,41 @@
+.sidenav {
+  height: 100%;
+  width: 210px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  font-family: 'Bitter', serif;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+.main {
+  margin-left: 320px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+
+hr {
+  border-top: 1px solid rgb(225,225,225);
+}
+
+p {
+  font-size: 11px;
+  font-color: #949494;
+}
+
+html {
+  padding-right: 0;
+    font-family: 'Bitter', serif;
+}
+
+.com {
+  background-color: white;
+  border: 3px solid red;
+  color: red;
+  width:28%;
+  height: 40px;
+  margin-left: 30%;
+}
